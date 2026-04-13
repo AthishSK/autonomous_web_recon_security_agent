@@ -1,0 +1,12 @@
+# Web Framework & Server
+fastapi
+uvicorn[standard]
+
+# Recon Tools
+requests
+dnspython
+python-whois
+python-nmap
+
+# Optional: If you ever need to manually handle the CORS middleware in FastAPI
+# fastapi.middleware.cors
