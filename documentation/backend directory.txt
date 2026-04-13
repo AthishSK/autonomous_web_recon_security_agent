@@ -1,0 +1,65 @@
+backend/
+│
+├── app/
+│   ├── main.py                 # FastAPI app entry point + CORS setup
+│   │
+│   ├── core/                  # Core configs & shared settings
+│   │   ├── config.py          # Environment variables (.env handling)
+│   │   ├── logger.py          # Logging configuration
+│   │   └── security.py        # Auth / security utils (optional)
+│   │
+│   ├── agent/                 # AI Agent logic (ReAct architecture)
+│   │   ├── orchestrator.py    # Main agent loop (ReAct flow)
+│   │   ├── prompts.py         # System & task prompts
+│   │   ├── parser.py          # Parse LLM responses → actions
+│   │   └── memory.py          # (Optional) conversation/tool memory
+│   │
+│   ├── tools/                 # All external tool integrations
+│   │   ├── registry.py        # Tool registry + schemas
+│   │   │
+│   │   ├── recon/             # Reconnaissance tools
+│   │   │   ├── dns_lookup.py
+│   │   │   ├── whois_lookup.py
+│   │   │   ├── subdomain_enum.py
+│   │   │
+│   │   ├── scanning/          # Active scanning tools
+│   │   │   ├── nmap_scan.py
+│   │   │   ├── ssl_check.py
+│   │   │   ├── http_headers.py
+│   │   │
+│   │   ├── analysis/          # Analysis / enrichment tools
+│   │   │   ├── tech_fingerprint.py
+│   │   │   ├── cve_search.py
+│   │   │
+│   │   └── utils/             # Shared helpers for tools
+│   │       ├── network.py
+│   │       └── validators.py
+│   │
+│   ├── schemas/               # Pydantic models (request/response)
+│   │   ├── agent.py
+│   │   └── tool.py
+│   │
+│   ├── services/              # Business logic layer (optional but clean)
+│   │   └── agent_service.py
+│   │
+│   ├── routes/                # API endpoints
+│   │   ├── agent.py           # SSE /stream endpoint
+│   │   └── health.py          # Health check endpoint
+│   │
+│   └── utils/                 # App-wide utilities
+│       ├── helpers.py
+│       └── exceptions.py
+│
+├── tests/                     # Unit & integration tests
+│   ├── test_agent.py
+│   ├── test_tools.py
+│   └── test_routes.py
+│
+├── scripts/                   # Dev / automation scripts
+│   └── run_local.sh
+│
+├── requirements.txt
+├── .env
+├── .env.example
+├── README.md
+└── pyproject.toml             # (optional, if using modern packaging)

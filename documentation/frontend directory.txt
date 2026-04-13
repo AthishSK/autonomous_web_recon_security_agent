@@ -1,0 +1,52 @@
+frontend/
+│
+├── public/                      # Static assets
+│   └── favicon.svg
+│
+├── src/
+│   ├── main.jsx                 # App entry point (ReactDOM)
+│   ├── App.jsx                  # Root component
+│   │
+│   ├── assets/                  # Images, icons, logos
+│   │   └── logo.svg
+│   │
+│   ├── components/              # Reusable UI components
+│   │   ├── common/              # Generic UI (buttons, loaders)
+│   │   │   ├── Button.jsx
+│   │   │   ├── Loader.jsx
+│   │   │   └── Card.jsx
+│   │   │
+│   │   ├── agent/               # Agent-specific UI
+│   │   │   ├── GoalInput.jsx        # User prompt bar
+│   │   │   ├── AgentFeed.jsx        # Streaming log container
+│   │   │   ├── ThoughtBubble.jsx    # LLM reasoning display
+│   │   │   ├── ToolCall.jsx         # Tool execution + result
+│   │   │   └── FinalReport.jsx      # Final structured output
+│   │
+│   ├── hooks/                   # Custom React hooks
+│   │   ├── useAgentStream.js    # SSE streaming logic
+│   │   └── useAutoScroll.js     # Auto-scroll feed
+│   │
+│   ├── services/                # API layer
+│   │   └── agentService.js      # Handles SSE + requests
+│   │
+│   ├── store/                   # State management (optional but powerful)
+│   │   └── agentStore.js        # Zustand / Context store
+│   │
+│   ├── utils/                   # Helper functions
+│   │   ├── severity.js          # Risk color mapping
+│   │   ├── formatters.js        # Data formatting
+│   │   └── constants.js
+│   │
+│   ├── styles/                  # Global styles
+│   │   ├── globals.css
+│   │   └── theme.css
+│   │
+│   └── types/                   # (Optional) TS types or JSDoc defs
+│       └── agent.js
+│
+├── .env
+├── .env.example
+├── package.json
+├── vite.config.js
+└── README.md
